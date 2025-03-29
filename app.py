@@ -37,8 +37,8 @@ def main():
     graph=graph_builder.compile()
 
     try:
-        png_data = st.image(Image(graph.get_graph().draw_mermaid_png()))
-        st.image(BytesIO(png_data), caption="Graph Visualization", use_column_width=True)
+        png_data = graph.get_graph().draw_mermaid_png()
+        st.image(BytesIO(png_data), caption="Graph Visualization")
     except Exception as e:
             print(e)
             print("Error displaying graph image. Please check the graph configuration.")
